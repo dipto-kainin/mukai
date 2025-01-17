@@ -1,15 +1,14 @@
+"use client";
 import { Navbar } from "@/app/components/Appbar";
 import CurrentlyPlaying from "@/app/components/CurrentlyPlayinng";
 import ShareButton from "@/app/components/Sharebutton";
 import VideoQueue from "@/app/components/VideoQueue";
 import VideoSubmission from "@/app/components/VideoSubmission";
 import { Toaster } from "@/components/ui/toaster";
+import { useParams } from "next/navigation";
 
-export default function Page({
-    params: { creatorId }
-}: {
-    params: { creatorId: string };
-}) {
+export default function Page() {
+    const { creatorId } = useParams();
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#1a1b26] via-[#4a1d96] to-[#581c87] p-6">
             <Navbar />
