@@ -65,7 +65,7 @@ export async function GET(req: NextRequest) {
 
         return NextResponse.json(
             {
-                stream: currentStream,
+                currentStream: currentStream,
             },
             { status: 200 }
         );
