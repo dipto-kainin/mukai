@@ -9,7 +9,7 @@ export const Redirect = () => {
     const Router = useRouter();
     useEffect(() => {
         if (session.data?.user) {
-            Router.push('/dashboard');
+            Router.push(`/dashboard${session.data.user.id}`);
         }
     }, [session, Router]);
     return null
