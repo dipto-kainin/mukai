@@ -5,14 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Share2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
-export default function ShareButton() {
+export default function ShareButton({ creatorId }: Readonly<{ creatorId: string }>) {
     const [isCopied, setIsCopied] = useState(false);
     const { toast } = useToast();
-    const creatorID = 'b25c71f4-8637-4b58-9e7d-2a3b1967a49b';
 
     const handleShare = async () => {
         // Ensure the URL is correctly constructed
-        const currentUrl = `${window.location.origin}/creator/${creatorID}`;
+        const currentUrl = `${window.location.origin}/creator/${creatorId}`;
 
         if (navigator.share) {
             try {
